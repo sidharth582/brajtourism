@@ -5,7 +5,7 @@
 
 [build]
   command = "npm run build"
-  publish = "build/client"
+  publish = "build"
 
 [dev]
   command = "npm run dev"
