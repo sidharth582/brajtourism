@@ -3,11 +3,15 @@
   "private": true,
   "type": "module",
   "scripts": {
-  "build": "react-router build",
-  "postbuild": "node ./scripts/copy-assets-stable.js",
+    "prebuild": "node ./scripts/check-node-version.js",
+    "build": "react-router build",
+    "postbuild": "node ./scripts/copy-assets-stable.js",
     "dev": "react-router dev",
-    "start": "react-router-serve ./build/server/index.js",
+    "start": "react-router-serve ./build/server/index.js ",
     "typecheck": "react-router typegen && tsc"
+  }, 
+  "engines": {
+    "node": ">=20"
   },
   "dependencies": {
     "@react-router/node": "7.12.0",
