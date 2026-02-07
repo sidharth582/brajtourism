@@ -14,23 +14,8 @@
       which maps entry files. We fetch the manifest and dynamically load the
       entry module so this index.html remains static (works on Netlify).
     -->
-    <script>
-      (async function () {
-        try {
-          const r = await fetch('/.vite/manifest.json');
-          if (!r.ok) return console.error('manifest not found', r.status);
-          const manifest = await r.json();
-          // find the first entry with an "isEntry" or fallback to first key
-          const entryKey = Object.keys(manifest).find((k) => manifest[k].isEntry) || Object.keys(manifest)[0];
-          const entryFile = manifest[entryKey].file || manifest[entryKey];
-          const script = document.createElement('script');
-          script.type = 'module';
-          script.src = '/' + entryFile.replace(/^\/+/, '');
-          document.body.appendChild(script);
-        } catch (err) {
-          console.error('failed to load client entry', err);
-        }
-      })();
-    </script>
+    <!-- Load the client entry directly. If you update the build and this filename changes,
+         update the src below to match the new entry file in build/client/assets/ -->
+    <script type="module" src="/assets/entry.client-C4vAeVvd.js"></script>
   </body>
 </html>
