@@ -42,6 +42,13 @@ async function main() {
     console.log('Copied:');
     console.log('  %s -> %s', manifestFile, path.basename(manifestDest));
     console.log('  %s -> %s', entryFile, path.basename(entryDest));
+    // Also copy public/index.html into the client build folder so static hosts
+    // like Netlify will serve the correct bootstrap HTML from the publish dir.
+    const publicIndex = path.resolve(process.cwd(), 'public', 'index.html');
+    const clientIndex = path.resolve(process.cwd(), 'build', 'client', 'index.html');
+    await fs.copyFile(publicIndex, clientIndex).catch((err) => {
+      console.warn('Warning: could not copy public/index.html to build/client/index.html:', err && err.code);
+    });
   } catch (err) {
     console.error('Error while copying stable assets:', err);
     process.exit(10);
