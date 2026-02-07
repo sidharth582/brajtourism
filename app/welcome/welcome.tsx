@@ -1,89 +1,411 @@
-import logoDark from "./logo-dark.svg";
-import logoLight from "./logo-light.svg";
+import React, { useState, useRef } from "react";
 
 export function Welcome() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [selectedPackage, setSelectedPackage] = useState<number | null>(null);
+  const iframeRef = useRef<HTMLIFrameElement | null>(null);
+  const timerRef = useRef<number | null>(null);
+
+  const packageDetails = [
+    {
+      id: 1,
+      title: "Sample Package 1",
+      duration: "1 Day",
+      itinerary:
+        "Morning: Temple visit. Afternoon: Local market and cultural walk. Evening: Aarti at the ghats.",
+    },
+    { id: 2, title: "Sample Package 2", duration: "2 Days", itinerary: "Day 1: Temple tour. Day 2: Village excursion and local shows." },
+    { id: 3, title: "Sample Package 3", duration: "3 Days", itinerary: "Multi-day pilgrimage with guided visits and comfortable stays." },
+    { id: 4, title: "Sample Package 4", duration: "1 Day", itinerary: "Quick spiritual getaway with highlights and transport included." },
+    { id: 5, title: "Sample Package 5", duration: "2 Days", itinerary: "Excursion covering nearby towns, meals, and a guided tour." },
+    { id: 6, title: "Sample Package 6", duration: "3 Days", itinerary: "Extended package with temple visits, cultural programs and leisure time." },
+  ];
+
+  function closeModal() {
+    setSelectedPackage(null);
+  }
+
+  const FORM_ACTION =
+    "https://docs.google.com/forms/d/e/1FAIpQLSfaCyOlVDllXtNTHvlH3TXz8LfVKAqG4MsdUEatx_r8hx76Pw/formResponse";
+
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    // Validate; if invalid, prevent the form submission
+    if (!name.trim() || !email.trim()) {
+      e.preventDefault();
+      alert("Please provide at least your name and email.");
+      return;
+    }
+    // Allow the browser to submit the form normally to Google Forms via the hidden iframe
+    setSubmitting(true);
+    // do not call e.preventDefault()
+  }
+
+  function handleIframeLoad() {
+    // iframe loads on mount too; only treat it as a successful submit when we are submitting
+    if (submitting) {
+      setSubmitted(true);
+      setSubmitting(false);
+      // optionally reset fields
+      setName("");
+      setEmail("");
+      setPhone("");
+      // hide the success message after 3 seconds
+      if (timerRef.current) {
+        clearTimeout(timerRef.current);
+      }
+      timerRef.current = window.setTimeout(() => setSubmitted(false), 3000);
+    }
+  }
+
+  // clear timeout on unmount
+  React.useEffect(() => {
+    function onKey(e: KeyboardEvent) {
+      if (e.key === "Escape") closeModal();
+    }
+    window.addEventListener("keydown", onKey);
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current);
+      window.removeEventListener("keydown", onKey);
+    };
+  }, []);
   return (
-    <main className="flex items-center justify-center pt-16 pb-4">
-      <div className="flex-1 flex flex-col items-center gap-16 min-h-0">
-        <header className="flex flex-col items-center gap-9">
-          <div className="w-[500px] max-w-[100vw] p-4">
-            <img
-              src={logoLight}
-              alt="React Router"
-              className="block w-full dark:hidden"
-            />
-            <img
-              src={logoDark}
-              alt="React Router"
-              className="hidden w-full dark:block"
-            />
+    <main className="min-h-screen bg-white text-gray-900">
+      {/* Header */}
+      <header className="border-b bg-white">
+        <div className="container mx-auto px-6 py-4 flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-md bg-amber-400 flex items-center justify-center text-white font-bold">V</div>
+              <div>
+                <div className="text-sm font-semibold">Vrindavan</div>
+                <div className="text-xs text-gray-500">Packages</div>
+              </div>
+            </div>
           </div>
-        </header>
-        <div className="max-w-[300px] w-full space-y-6 px-4">
-          <nav className="rounded-3xl border border-gray-200 p-6 dark:border-gray-700 space-y-4">
-            <p className="leading-6 text-gray-700 dark:text-gray-200 text-center">
-              What&apos;s next?
-            </p>
-            <ul>
-              {resources.map(({ href, text, icon }) => (
-                <li key={href}>
-                  <a
-                    className="group flex items-center gap-3 self-stretch p-3 leading-normal text-blue-700 hover:underline dark:text-blue-500"
-                    href={href}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {icon}
-                    {text}
-                  </a>
-                </li>
-              ))}
-            </ul>
+
+          <nav className="hidden md:flex items-center gap-6 text-sm">
+            <a className="text-amber-600 font-medium" href="#">Home</a>
+            <a className="text-gray-600 hover:text-gray-900" href="#packages">Packages</a>
+            <a className="text-gray-600 hover:text-gray-900" href="#">Our Services</a>
           </nav>
+
+          <div className="flex items-center gap-4">
+            <a className="hidden md:inline-block rounded-md bg-amber-500 px-4 py-2 text-sm font-medium text-white shadow" href="#">Check Availability</a>
+          </div>
         </div>
+      </header>
+
+      {/* Hero */}
+      <section className="container mx-auto px-6 py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          {/* Left hero */}
+          <div className="lg:col-span-7">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-amber-800">
+              Mathura Vrindavan
+              <br />
+              Tour Packages
+            </h1>
+            <p className="mt-6 text-gray-600 max-w-2xl">
+              Avail best discount on Mathura Vrindavan Packages today! Explore curated
+              itineraries, expert guides, and special offers tailored to your needs.
+            </p>
+
+            {/* CTA removed per request */}
+          </div>
+
+          {/* Right enquiry card */}
+          <aside className="lg:col-span-5">
+            <div className="sticky top-24">
+              <div className="bg-white rounded-xl border border-amber-200 shadow-lg p-6">
+                <h3 className="text-lg font-semibold text-amber-700">Planning a Trip? Get a Free Quote</h3>
+                <p className="mt-1 text-sm text-gray-500">Enquire Now and get additional free benefits</p>
+
+                {/* Hidden iframe used to POST to Google Forms without redirecting the user */}
+                <iframe
+                  title="hidden-form-target"
+                  name="hidden_iframe"
+                  ref={iframeRef}
+                  style={{ display: "none" }}
+                  onLoad={handleIframeLoad}
+                />
+
+                <form
+                  action={FORM_ACTION}
+                  method="POST"
+                  target="hidden_iframe"
+                  onSubmit={handleSubmit}
+                  className="mt-4 space-y-4"
+                >
+                  {/* Google Form field names (entry.<id>) map to your form fields */}
+                  <input type="hidden" name="usp" value="pp_url" />
+                  <div>
+                    <label className="sr-only">Your name</label>
+                    <input
+                      type="text"
+                      name="entry.180288810"
+                      placeholder="Your name"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      className="w-full rounded-md border border-amber-100 bg-amber-50 px-4 py-3 text-sm"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="sr-only">Email</label>
+                    <input
+                      type="email"
+                      name="entry.1051977811"
+                      placeholder="Email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      className="w-full rounded-md border border-amber-100 bg-amber-50 px-4 py-3 text-sm"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="sr-only">Phone</label>
+                    <input
+                      type="tel"
+                      name="entry.460200192"
+                      placeholder="Phone"
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
+                      className="w-full rounded-md border border-amber-100 bg-amber-50 px-4 py-3 text-sm"
+                    />
+                  </div>
+
+                  {/* date field removed per request */}
+
+                  <div>
+                    <button
+                      type="submit"
+                      className={`w-full rounded-md px-4 py-3 text-white font-medium ${submitting ? 'bg-amber-600 opacity-90 cursor-wait' : 'bg-amber-500 hover:bg-amber-600'}`}
+                      disabled={submitting}
+                      aria-busy={submitting}
+                    >
+                      {submitting ? (
+                        <span className="inline-flex items-center justify-center gap-3 w-full">
+                          <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" aria-hidden="true" />
+                          <span>Submitting...</span>
+                        </span>
+                      ) : (
+                        'Submit'
+                      )}
+                    </button>
+                  </div>
+                </form>
+                {submitted && (
+                  <div className="mt-4 rounded-md bg-emerald-50 border border-emerald-100 p-3 text-sm text-emerald-700">
+                    Thanks — your enquiry was submitted. You will be contacted shortly by our team!
+                  </div>
+                )}
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      {/* Packages section */}
+      <section id="packages" className="container mx-auto px-6 py-12">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-amber-700 text-center">Our Best Mathura Vrindavan Packages</h2>
+        <p className="mt-4 text-center text-gray-600 max-w-3xl mx-auto">
+          Explore some of our most popular itineraries. (Images are placeholders — replace with your photos later.)
+        </p>
+
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Package 1 - customize separately */}
+          <article className="border rounded-lg overflow-hidden shadow-sm bg-white">
+              <div className="h-48 bg-gray-100">
+                <img
+                  src="/images/img1.jpeg"
+                  alt="Package 1"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            <div className="p-4">
+              <div className="text-sm text-gray-500">Duration 1 Day</div>
+              <h3 className="mt-2 font-semibold text-amber-700">Sample Package 1</h3>
+              <p className="mt-2 text-sm text-gray-600">A short description of package 1. Replace with real content later.</p>
+              <div className="mt-4 flex gap-3">
+                  <button className="flex-1 rounded-md border border-amber-500 text-amber-500 px-3 py-2 text-sm">Enquire Now</button>
+                  <button
+                    type="button"
+                    onClick={() => setSelectedPackage(1)}
+                    className="flex-1 rounded-md bg-amber-500 text-white px-3 py-2 text-sm"
+                  >
+                    Know More
+                  </button>
+              </div>
+            </div>
+          </article>
+
+          {/* Package 2 */}
+          <article className="border rounded-lg overflow-hidden shadow-sm bg-white">
+            <div className="h-48 bg-gray-100">
+              <img
+                src="/images/img2.jpeg"
+                alt="Package 2"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="p-4">
+              <div className="text-sm text-gray-500">Duration 2 Days</div>
+              <h3 className="mt-2 font-semibold text-amber-700">Sample Package 2</h3>
+              <p className="mt-2 text-sm text-gray-600">A short description of package 2. Replace with real content later.</p>
+              <div className="mt-4 flex gap-3">
+                  <button className="flex-1 rounded-md border border-amber-500 text-amber-500 px-3 py-2 text-sm">Enquire Now</button>
+                  <button
+                    type="button"
+                    onClick={() => setSelectedPackage(2)}
+                    className="flex-1 rounded-md bg-amber-500 text-white px-3 py-2 text-sm"
+                  >
+                    Know More
+                  </button>
+              </div>
+            </div>
+          </article>
+
+          {/* Package 3 */}
+          <article className="border rounded-lg overflow-hidden shadow-sm bg-white">
+            <div className="h-48 bg-gray-100">
+              <img
+                src="/images/img3.jpeg"
+                alt="Package 3"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="p-4">
+              <div className="text-sm text-gray-500">Duration 3 Days</div>
+              <h3 className="mt-2 font-semibold text-amber-700">Sample Package 3</h3>
+              <p className="mt-2 text-sm text-gray-600">A short description of package 3. Replace with real content later.</p>
+                <div className="mt-4 flex gap-3">
+                  <button className="flex-1 rounded-md border border-amber-500 text-amber-500 px-3 py-2 text-sm">Enquire Now</button>
+                  <button
+                    type="button"
+                    onClick={() => setSelectedPackage(3)}
+                    className="flex-1 rounded-md bg-amber-500 text-white px-3 py-2 text-sm"
+                  >
+                    Know More
+                  </button>
+                </div>
+            </div>
+          </article>
+
+          {/* Package 4 */}
+          <article className="border rounded-lg overflow-hidden shadow-sm bg-white">
+            <div className="h-48 bg-gray-100">
+              <img
+                src="/images/img4.jpeg"
+                alt="Package 4"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="p-4">
+              <div className="text-sm text-gray-500">Duration 1 Day</div>
+              <h3 className="mt-2 font-semibold text-amber-700">Sample Package 4</h3>
+              <p className="mt-2 text-sm text-gray-600">A short description of package 4. Replace with real content later.</p>
+                <div className="mt-4 flex gap-3">
+                <button className="flex-1 rounded-md border border-amber-500 text-amber-500 px-3 py-2 text-sm">Enquire Now</button>
+                <button
+                  type="button"
+                  onClick={() => setSelectedPackage(4)}
+                  className="flex-1 rounded-md bg-amber-500 text-white px-3 py-2 text-sm"
+                >
+                  Know More
+                </button>
+              </div>
+            </div>
+          </article>
+
+          {/* Package 5 */}
+          <article className="border rounded-lg overflow-hidden shadow-sm bg-white">
+            <div className="h-48 bg-gray-100">
+              <img
+                src="/images/img5.jpeg"
+                alt="Package 5"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="p-4">
+              <div className="text-sm text-gray-500">Duration 2 Days</div>
+              <h3 className="mt-2 font-semibold text-amber-700">Sample Package 5</h3>
+              <p className="mt-2 text-sm text-gray-600">A short description of package 5. Replace with real content later.</p>
+              <div className="mt-4 flex gap-3">
+                <button className="flex-1 rounded-md border border-amber-500 text-amber-500 px-3 py-2 text-sm">Enquire Now</button>
+                <button
+                  type="button"
+                  onClick={() => setSelectedPackage(5)}
+                  className="flex-1 rounded-md bg-amber-500 text-white px-3 py-2 text-sm"
+                >
+                  Know More
+                </button>
+              </div>
+            </div>
+          </article>
+
+          {/* Package 6 */}
+          <article className="border rounded-lg overflow-hidden shadow-sm bg-white">
+            <div className="h-48 bg-gray-100">
+              <img
+                src="/images/img6.jpeg"
+                alt="Package 6"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="p-4">
+              <div className="text-sm text-gray-500">Duration 3 Days</div>
+              <h3 className="mt-2 font-semibold text-amber-700">Sample Package 6</h3>
+              <p className="mt-2 text-sm text-gray-600">A short description of package 6. Replace with real content later.</p>
+              <div className="mt-4 flex gap-3">
+                <button className="flex-1 rounded-md border border-amber-500 text-amber-500 px-3 py-2 text-sm">Enquire Now</button>
+                <button
+                  type="button"
+                  onClick={() => setSelectedPackage(6)}
+                  className="flex-1 rounded-md bg-amber-500 text-white px-3 py-2 text-sm"
+                >
+                  Know More
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+      {/* Modal for package details */}
+      {selectedPackage !== null && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center">
+          <div className="absolute inset-0 bg-black/50" onClick={closeModal} />
+          <div className="relative max-w-lg w-full bg-white rounded-lg shadow-lg p-6 m-4">
+            <button
+              onClick={closeModal}
+              className="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
+              aria-label="Close"
+            >
+              ✕
+            </button>
+            {(() => {
+              const info = packageDetails.find((p) => p.id === selectedPackage);
+              if (!info) return null;
+              return (
+                <div>
+                  <h3 className="text-xl font-semibold text-amber-700">{info.title}</h3>
+                  <div className="text-sm text-gray-500 mt-1">Duration: {info.duration}</div>
+                  <p className="mt-4 text-gray-700">{info.itinerary}</p>
+                </div>
+              );
+            })()}
+          </div>
+        </div>
+      )}
+      </section>
+
+      {/* Bottom wave / footer accent */}
+      <div className="mt-8">
+        <div className="w-full h-24 bg-gradient-to-r from-amber-200 via-pink-100 to-sky-200 rounded-t-lg"></div>
       </div>
     </main>
   );
 }
-
-const resources = [
-  {
-    href: "https://reactrouter.com/docs",
-    text: "React Router Docs",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="20"
-        viewBox="0 0 20 20"
-        fill="none"
-        className="stroke-gray-600 group-hover:stroke-current dark:stroke-gray-300"
-      >
-        <path
-          d="M9.99981 10.0751V9.99992M17.4688 17.4688C15.889 19.0485 11.2645 16.9853 7.13958 12.8604C3.01467 8.73546 0.951405 4.11091 2.53116 2.53116C4.11091 0.951405 8.73546 3.01467 12.8604 7.13958C16.9853 11.2645 19.0485 15.889 17.4688 17.4688ZM2.53132 17.4688C0.951566 15.8891 3.01483 11.2645 7.13974 7.13963C11.2647 3.01471 15.8892 0.951453 17.469 2.53121C19.0487 4.11096 16.9854 8.73551 12.8605 12.8604C8.73562 16.9853 4.11107 19.0486 2.53132 17.4688Z"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-        />
-      </svg>
-    ),
-  },
-  {
-    href: "https://rmx.as/discord",
-    text: "Join Discord",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="20"
-        viewBox="0 0 24 20"
-        fill="none"
-        className="stroke-gray-600 group-hover:stroke-current dark:stroke-gray-300"
-      >
-        <path
-          d="M15.0686 1.25995L14.5477 1.17423L14.2913 1.63578C14.1754 1.84439 14.0545 2.08275 13.9422 2.31963C12.6461 2.16488 11.3406 2.16505 10.0445 2.32014C9.92822 2.08178 9.80478 1.84975 9.67412 1.62413L9.41449 1.17584L8.90333 1.25995C7.33547 1.51794 5.80717 1.99419 4.37748 2.66939L4.19 2.75793L4.07461 2.93019C1.23864 7.16437 0.46302 11.3053 0.838165 15.3924L0.868838 15.7266L1.13844 15.9264C2.81818 17.1714 4.68053 18.1233 6.68582 18.719L7.18892 18.8684L7.50166 18.4469C7.96179 17.8268 8.36504 17.1824 8.709 16.4944L8.71099 16.4904C10.8645 17.0471 13.128 17.0485 15.2821 16.4947C15.6261 17.1826 16.0293 17.8269 16.4892 18.4469L16.805 18.8725L17.3116 18.717C19.3056 18.105 21.1876 17.1751 22.8559 15.9238L23.1224 15.724L23.1528 15.3923C23.5873 10.6524 22.3579 6.53306 19.8947 2.90714L19.7759 2.73227L19.5833 2.64518C18.1437 1.99439 16.6386 1.51826 15.0686 1.25995ZM16.6074 10.7755L16.6074 10.7756C16.5934 11.6409 16.0212 12.1444 15.4783 12.1444C14.9297 12.1444 14.3493 11.6173 14.3493 10.7877C14.3493 9.94885 14.9378 9.41192 15.4783 9.41192C16.0471 9.41192 16.6209 9.93851 16.6074 10.7755ZM8.49373 12.1444C7.94513 12.1444 7.36471 11.6173 7.36471 10.7877C7.36471 9.94885 7.95323 9.41192 8.49373 9.41192C9.06038 9.41192 9.63892 9.93712 9.6417 10.7815C9.62517 11.6239 9.05462 12.1444 8.49373 12.1444Z"
-          strokeWidth="1.5"
-        />
-      </svg>
-    ),
-  },
-];
