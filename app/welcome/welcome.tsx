@@ -13,16 +13,43 @@ export function Welcome() {
   const packageDetails = [
     {
       id: 1,
-      title: "Sample Package 1",
-      duration: "1 Day",
-      itinerary:
-        "Morning: Temple visit. Afternoon: Local market and cultural walk. Evening: Aarti at the ghats.",
+      title: "Mathura Vrindavan & Gokul package - RS 11,999/- (4 pax)",
+      duration: "4 Days, 3 Nights",
+      itinerary: `📍 Day 1 – Vrindavan\n\n\t• Banke Bihari Temple\n\t• Radha Vallabh Temple\n\t• Radha Raman Temple\n\t• Prem Mandir (Evening Light Show)\n\n🛌 Stay in Gokul\n\n📍 Day 2 – Gokul | Barsana | Nandgaon\n\n\t• Radha Rani Temple\n\t• Nand Bhavan Temple\n\t• Raman Reti\n\t• Brahmand Ghat\n\t• Chintaharan Temple\n\t• Yamuna Boating\n\n🛌 Stay in Gokul\n\n📍 Day 3 – Govardhan\n\n\t• Govardhan Parikrama\n\t• Radha Kund\n\t• Shyam Kund\n\n🛌 Stay in Gokul\n\n📍 Day 4 – Mathura\n\n\t• Shri Krishna Janmabhoomi Temple\n\t• Dwarkadhish Temple\n\t• Vishram Ghat\n\t• Local Shopping (Mathura Peda)\n\n✅ Inclusions\n✔ Pickup & Drop – Mathura\n✔ Private Cab (4 Days)\n✔ 3★ Hotel in Gokul\n✔ Breakfast\n✔ Local Guide`
+  },
+
+    { 
+      id: 2,
+      title: "Mathura Vrindavan & Gokul package - RS 9,999/- (4 pax)",
+      duration: "3 Days, 2 Nights",
+      itinerary: `📍 Day 1 - Vrindavan\n\n\t• Banke Bihari\n\t• Prem Mandir\n\t• Radha Raman\n\n🛌 Stay in Gokul\n\n📍 Day 2 – Gokul + Barsana\n\n\t• Radha Rani Temple\n\t• Nandgaon\n\t• Raman Reti\n\t• Brahmand Ghat\n\t• Gokul local\n\t• Chintaharan\n\t• Yamuna boating \n\n🛌 Stay in Gokul\n\n📍 Day 3 – Mathura\n\n\t• Krishna Janmabhoomi\n\t• Dwarkadhish\n\t• Vishram Ghat\n\n✅ Inclusions\n✔ Pickup & Drop\n✔ 2 Nights Stay\n✔ Breakfast\n✔ Private Cab\n✔ Guide`
     },
-    { id: 2, title: "Sample Package 2", duration: "2 Days", itinerary: "Day 1: Temple tour. Day 2: Village excursion and local shows." },
-    { id: 3, title: "Sample Package 3", duration: "3 Days", itinerary: "Multi-day pilgrimage with guided visits and comfortable stays." },
-    { id: 4, title: "Sample Package 4", duration: "1 Day", itinerary: "Quick spiritual getaway with highlights and transport included." },
-    { id: 5, title: "Sample Package 5", duration: "2 Days", itinerary: "Excursion covering nearby towns, meals, and a guided tour." },
-    { id: 6, title: "Sample Package 6", duration: "3 Days", itinerary: "Extended package with temple visits, cultural programs and leisure time." },
+    { 
+      id: 3, 
+      title: "Mathura Vrindavan & Gokul package - RS 6,499/- (2 pax)", 
+      duration: "2 Days, 1 Night", 
+      itinerary: `📍 Day 1 – Vrindavan\n\n\t• Banke Bihari\n\t• Prem Mandir\n\t• Radha Vallabh\n\n🛌 Stay in Gokul\n\n📍 Day 2 – Mathura + Gokul\n\n\t• Gokul local \n\t• Raman reti\n\t• Krishna Janmabhoomi\n\t• Vishram Ghat\n\n✅ Inclusions\n✔ Pickup & Drop\n✔ 2 Nights Stay\n✔ Breakfast\n✔ Private Cab\n✔ Guide (Temple Assistance)` 
+    },
+    { id: 4,
+      title: "Mathura Vrindavan Gokul Barsana Goverdhan package - RS 7,499/- (2 pax)",
+      duration: "2 Days, 1 Night", 
+      itinerary: `📍 Day 1  – Vrindavan + Barsana + Goverdhan\n\n\t•\tBanke Bihari\n\t•\tPrem Mandir\n\t•\tRadha Vallabh\n\t•\tBarsana\n\t•\tGoverdhan\n\n🛌 Stay in Gokul\n\n📍 Day 2 – Mathura + Gokul\n\n\t•\tGokul local \n\t•\tRaman reti\n\t•\tKrishna Janmabhoomi\n\t•\tDwarkadish\n\t•\tVishram Ghat\n\n✅ Inclusions\n✔ 1 Night Stay\n✔ Breakfast\n✔ Cab\n✔ Pickup & Drop\n✔ Guide (Temple Assistance)` 
+     },
+    { id: 5, 
+      title: "Full Day Package - RS 4,499/- (2 pax)", 
+      duration: "1 Day", 
+      itinerary: `•⁠  ⁠Banke Bihari\n\t•\tPrem Mandir\n\t•\tKrishna Janmabhoomi\n\t•\tDwarkadhish\n\t•\tVishram Ghat\n\t•\tRaman Reti\n\t•\tGokul local\n\n✅ Inclusions\n\n✔ Full Day Cab (8–10 hrs)\n✔ Pickup & Drop Mathura\n✔ Local Guide` 
+    },
+    { id: 6, 
+      title: "Mathura Vrindavan and Agra package - RS 12,999/- (4 pax)", 
+      duration: "3 Days", 
+      itinerary: `📍 Day 1 – Vrindavan \n\nPickup from Mathura Railway Station\n\n•⁠  ⁠Banke Bihari Temple\n•⁠  ⁠Radha Raman Temple\n•⁠  ⁠Radha Vallabh Temple\n•⁠  ⁠Prem Mandir (Evening Light Show)\n\n🛌 Overnight Stay – Gokul\n\n\n📍 Day 2 – Gokul | Barsana | Nandgaon\n\n•⁠  ⁠Radha Rani Temple\n•⁠  ⁠Nand Bhavan Temple\n\nEvening Excursion:\n•⁠  ⁠⁠Raman Reti\n•⁠  ⁠Brahmand Ghat\n•⁠  ⁠Chintaharan Temple\n•⁠  ⁠Yamuna Boating\n•⁠  ⁠⁠gokul local\n\n🛌 Overnight Stay – Gokul\n\n\n📍 Day 3 – Agra Excursion (Same Day Return)\n\nMorning drive to Agra (Approx 1.5 hrs)\n\n•⁠  ⁠Taj Mahal\n•⁠  ⁠Agra Fort\n•⁠  ⁠Mehtab Bagh (Sunset View)\n\nEvening return to Gokul\n\n🛌 Overnight Stay – Gokul\n\n\n📍 Day 4 – Mathura Local & Departure\n\n•⁠  ⁠Shri Krishna Janmabhoomi Temple\n•⁠  ⁠Dwarkadhish Temple\n•⁠  ⁠Vishram Ghat\n•⁠  ⁠Local Shopping – Mathura Peda\n\nHotel Checkout\n\n✅ Inclusions\n\n✔ 3 Night Stay\n✔ Breakfast\n✔ Cab\n✔ Pickup & Drop\n✔ Guide` 
+    },
+    { id: 7,
+      title: "🌸 BRAJ HOLI EXPERIENCE – 1 Day Special  - Rs 4,999/- (2 pax)",
+      duration: "1 Day",
+      itinerary: `📍 Pickup & Drop: Mathura Railway Station / Hotel\n🚗 Private Cab | Local Assistance | Safe Holi Guidance\n\n✔ Private Cab (Full Day – 8 to 10 hrs)\n✔ Pickup & Drop – Mathura\n✔ Local Guide / Holi Assistance`
+    },
   ];
 
   function closeModal() {
@@ -31,7 +58,6 @@ export function Welcome() {
 
   const FORM_ACTION =
     "https://docs.google.com/forms/d/e/1FAIpQLSfaCyOlVDllXtNTHvlH3TXz8LfVKAqG4MsdUEatx_r8hx76Pw/formResponse";
-
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     // Validate; if invalid, prevent the form submission
     if (!name.trim() || !email.trim()) {
@@ -79,23 +105,21 @@ export function Welcome() {
         <div className="container mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-md bg-amber-400 flex items-center justify-center text-white font-bold">V</div>
+              <div className="w-10 h-10 rounded-md bg-sky-800 flex items-center justify-center text-white font-bold">MV</div>
               <div>
-                <div className="text-sm font-semibold">Vrindavan</div>
+                <div className="text-sm font-semibold">Explore Mathura Vrindavan</div>
                 <div className="text-xs text-gray-500">Packages</div>
               </div>
             </div>
           </div>
 
-          <nav className="hidden md:flex items-center gap-6 text-sm">
-            <a className="text-amber-600 font-medium" href="#">Home</a>
+          <nav className="hidden md:flex items-center gap-9 text-sm">
+            <a className="text-blue-500 font-medium" href="#">Home</a>
             <a className="text-gray-600 hover:text-gray-900" href="#packages">Packages</a>
-            <a className="text-gray-600 hover:text-gray-900" href="#">Our Services</a>
+              <a className="text-gray-600 hover:text-gray-900" href="#blogs">Know More</a>
+              <a className="text-gray-600 hover:text-gray-900" href="#services">Our Services</a>
+            <a className="text-gray-600 hover:text-gray-900" href="#contact">Contact Us</a>
           </nav>
-
-          <div className="flex items-center gap-4">
-            <a className="hidden md:inline-block rounded-md bg-amber-500 px-4 py-2 text-sm font-medium text-white shadow" href="#">Check Availability</a>
-          </div>
         </div>
       </header>
 
@@ -104,24 +128,22 @@ export function Welcome() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Left hero */}
           <div className="lg:col-span-7">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-amber-800">
-              Mathura Vrindavan
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-sky-800">
+              Explore Mathura
               <br />
-              Tour Packages
+              Vrindavan
             </h1>
             <p className="mt-6 text-gray-600 max-w-2xl">
               Avail best discount on Mathura Vrindavan Packages today! Explore curated
               itineraries, expert guides, and special offers tailored to your needs.
             </p>
-
-            {/* CTA removed per request */}
           </div>
 
           {/* Right enquiry card */}
           <aside className="lg:col-span-5">
             <div className="sticky top-24">
-              <div className="bg-white rounded-xl border border-amber-200 shadow-lg p-6">
-                <h3 className="text-lg font-semibold text-amber-700">Planning a Trip? Get a Free Quote</h3>
+              <div className="bg-white rounded-xl border border-blue-200 shadow-lg p-6">
+                <h3 className="text-lg font-semibold text-sky-800">Planning a Trip? Get a Free Quote</h3>
                 <p className="mt-1 text-sm text-gray-500">Enquire Now and get additional free benefits</p>
 
                 {/* Hidden iframe used to POST to Google Forms without redirecting the user */}
@@ -150,7 +172,7 @@ export function Welcome() {
                       placeholder="Your name"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      className="w-full rounded-md border border-amber-100 bg-amber-50 px-4 py-3 text-sm"
+                      className="w-full rounded-md border border-blue-100 bg-blue-50 px-4 py-3 text-sm"
                     />
                   </div>
 
@@ -162,7 +184,7 @@ export function Welcome() {
                       placeholder="Email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      className="w-full rounded-md border border-amber-100 bg-amber-50 px-4 py-3 text-sm"
+                      className="w-full rounded-md border border-blue-100 bg-blue-50 px-4 py-3 text-sm"
                     />
                   </div>
 
@@ -174,7 +196,7 @@ export function Welcome() {
                       placeholder="Phone"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
-                      className="w-full rounded-md border border-amber-100 bg-amber-50 px-4 py-3 text-sm"
+                      className="w-full rounded-md border border-blue-100 bg-blue-50 px-4 py-3 text-sm"
                     />
                   </div>
 
@@ -183,7 +205,7 @@ export function Welcome() {
                   <div>
                     <button
                       type="submit"
-                      className={`w-full rounded-md px-4 py-3 text-white font-medium ${submitting ? 'bg-amber-600 opacity-90 cursor-wait' : 'bg-amber-500 hover:bg-amber-600'}`}
+                      className={`w-full rounded-md px-4 py-3 text-white font-medium ${submitting ? 'bg-blue-400 opacity-90 cursor-wait' : 'bg-blue-500 hover:bg-blue-600'}`}
                       disabled={submitting}
                       aria-busy={submitting}
                     >
@@ -211,9 +233,9 @@ export function Welcome() {
 
       {/* Packages section */}
       <section id="packages" className="container mx-auto px-6 py-12">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-amber-700 text-center">Our Best Mathura Vrindavan Packages</h2>
+        <h2 className="text-3xl md:text-4xl font-extrabold text-sky-800 text-center">Our Best Mathura Vrindavan Packages</h2>
         <p className="mt-4 text-center text-gray-600 max-w-3xl mx-auto">
-          Explore some of our most popular itineraries. (Images are placeholders — replace with your photos later.)
+          Explore some of our most popular itineraries.
         </p>
 
         <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -221,21 +243,22 @@ export function Welcome() {
           <article className="border rounded-lg overflow-hidden shadow-sm bg-white">
               <div className="h-48 bg-gray-100">
                 <img
-                  src="/images/img1.jpeg"
+                  src="/images/img22.jpeg"
                   alt="Package 1"
                   className="w-full h-full object-cover"
                 />
               </div>
             <div className="p-4">
-              <div className="text-sm text-gray-500">Duration 1 Day</div>
-              <h3 className="mt-2 font-semibold text-amber-700">Sample Package 1</h3>
-              <p className="mt-2 text-sm text-gray-600">A short description of package 1. Replace with real content later.</p>
+              <div className="text-sm text-gray-500">Duration - 4D/3N</div>
+              <h3 className="mt-2 font-semibold text-sky-800">Mathura Vrindavan Goverdhan Gokul package - RS 11,999/- (4 pax)</h3>
+              <p className="mt-2 text-sm text-gray-600">A soulful escape—guided temple visits, morning aartis at ghats, cultural shows, comfortable stays, local meals and private transfers. Personalized guide ensures a peaceful, memorable pilgrimage</p>
               <div className="mt-4 flex gap-3">
-                  <button className="flex-1 rounded-md border border-amber-500 text-amber-500 px-3 py-2 text-sm">Enquire Now</button>
+                  <button 
+                    className="flex-1 rounded-md border border-blue-500 text-blue-500 px-3 py-2 text-sm">Enquire Now</button>
                   <button
                     type="button"
                     onClick={() => setSelectedPackage(1)}
-                    className="flex-1 rounded-md bg-amber-500 text-white px-3 py-2 text-sm"
+                    className="flex-1 rounded-md bg-blue-500 text-white px-3 py-2 text-sm"
                   >
                     Know More
                   </button>
@@ -247,21 +270,21 @@ export function Welcome() {
           <article className="border rounded-lg overflow-hidden shadow-sm bg-white">
             <div className="h-48 bg-gray-100">
               <img
-                src="/images/img2.jpeg"
+                src="/images/img17.jpeg"
                 alt="Package 2"
                 className="w-full h-full object-cover"
               />
             </div>
             <div className="p-4">
-              <div className="text-sm text-gray-500">Duration 2 Days</div>
-              <h3 className="mt-2 font-semibold text-amber-700">Sample Package 2</h3>
-              <p className="mt-2 text-sm text-gray-600">A short description of package 2. Replace with real content later.</p>
+              <div className="text-sm text-gray-500">Duration - 3D/2N</div>
+              <h3 className="mt-2 font-semibold text-sky-800">Mathura Vrindavan & Gokul package - RS 9,999/- (4 pax)</h3>
+              <p className="mt-2 text-sm text-gray-600">A spiritual getaway—explore ancient temples, experience vibrant local culture, enjoy comfortable stays, and savor traditional cuisine. Perfect for a quick, refreshing pilgrimage</p>
               <div className="mt-4 flex gap-3">
-                  <button className="flex-1 rounded-md border border-amber-500 text-amber-500 px-3 py-2 text-sm">Enquire Now</button>
+                  <button className="flex-1 rounded-md border border-blue-500 text-blue-500 px-3 py-2 text-sm">Enquire Now</button>
                   <button
                     type="button"
                     onClick={() => setSelectedPackage(2)}
-                    className="flex-1 rounded-md bg-amber-500 text-white px-3 py-2 text-sm"
+                    className="flex-1 rounded-md bg-blue-500 text-white px-3 py-2 text-sm"
                   >
                     Know More
                   </button>
@@ -279,15 +302,15 @@ export function Welcome() {
               />
             </div>
             <div className="p-4">
-              <div className="text-sm text-gray-500">Duration 3 Days</div>
-              <h3 className="mt-2 font-semibold text-amber-700">Sample Package 3</h3>
-              <p className="mt-2 text-sm text-gray-600">A short description of package 3. Replace with real content later.</p>
+              <div className="text-sm text-gray-500">Duration - 2D/1N</div>
+              <h3 className="mt-2 font-semibold text-sky-800">Mathura Vrindavan & Gokul package - RS 6,499/- (2 pax)</h3>
+              <p className="mt-2 text-sm text-gray-600">A quick spiritual retreat—visit key temples, enjoy local cuisine, comfortable stays and experience the vibrant culture of Mathura and Vrindavan. Ideal for a short getaway.</p>
                 <div className="mt-4 flex gap-3">
-                  <button className="flex-1 rounded-md border border-amber-500 text-amber-500 px-3 py-2 text-sm">Enquire Now</button>
+                  <button className="flex-1 rounded-md border border-blue-500 text-blue-500 px-3 py-2 text-sm">Enquire Now</button>
                   <button
                     type="button"
                     onClick={() => setSelectedPackage(3)}
-                    className="flex-1 rounded-md bg-amber-500 text-white px-3 py-2 text-sm"
+                    className="flex-1 rounded-md bg-blue-500 text-white px-3 py-2 text-sm"
                   >
                     Know More
                   </button>
@@ -305,15 +328,15 @@ export function Welcome() {
               />
             </div>
             <div className="p-4">
-              <div className="text-sm text-gray-500">Duration 1 Day</div>
-              <h3 className="mt-2 font-semibold text-amber-700">Sample Package 4</h3>
-              <p className="mt-2 text-sm text-gray-600">A short description of package 4. Replace with real content later.</p>
+              <div className="text-sm text-gray-500">Duration - 2D/1N</div>
+              <h3 className="mt-2 font-semibold text-sky-800">Mathura Vrindavan Gokul Barsana Goverdhan package - RS 7,499/- (2 pax)</h3>
+              <p className="mt-2 text-sm text-gray-600">Experience the spiritual essence of Mathura, Vrindavan, Gokul, Barsana, and Goverdhan in just two days. Enjoy guided temple visits, scenic drives, and comfortable stays for a memorable pilgrimage.</p>
                 <div className="mt-4 flex gap-3">
-                <button className="flex-1 rounded-md border border-amber-500 text-amber-500 px-3 py-2 text-sm">Enquire Now</button>
+                <button className="flex-1 rounded-md border border-blue-500 text-blue-500 px-3 py-2 text-sm">Enquire Now</button>
                 <button
                   type="button"
                   onClick={() => setSelectedPackage(4)}
-                  className="flex-1 rounded-md bg-amber-500 text-white px-3 py-2 text-sm"
+                  className="flex-1 rounded-md bg-blue-500 text-white px-3 py-2 text-sm"
                 >
                   Know More
                 </button>
@@ -331,15 +354,15 @@ export function Welcome() {
               />
             </div>
             <div className="p-4">
-              <div className="text-sm text-gray-500">Duration 2 Days</div>
-              <h3 className="mt-2 font-semibold text-amber-700">Sample Package 5</h3>
-              <p className="mt-2 text-sm text-gray-600">A short description of package 5. Replace with real content later.</p>
+              <div className="text-sm text-gray-500">Duration 1 Day</div>
+              <h3 className="mt-2 font-semibold text-sky-800">Full Day Package - RS 4,499/- (2 pax)</h3>
+              <p className="mt-2 text-sm text-gray-600">Enjoy a complete spiritual day tour of Mathura and Vrindavan, visiting iconic temples and sacred sites with a local guide. Includes comfortable cab, pickup and drop, and personalized assistance for a memorable experience.</p>
               <div className="mt-4 flex gap-3">
-                <button className="flex-1 rounded-md border border-amber-500 text-amber-500 px-3 py-2 text-sm">Enquire Now</button>
+                <button className="flex-1 rounded-md border border-blue-500 text-blue-500 px-3 py-2 text-sm">Enquire Now</button>
                 <button
                   type="button"
                   onClick={() => setSelectedPackage(5)}
-                  className="flex-1 rounded-md bg-amber-500 text-white px-3 py-2 text-sm"
+                  className="flex-1 rounded-md bg-blue-500 text-white px-3 py-2 text-sm"
                 >
                   Know More
                 </button>
@@ -357,15 +380,41 @@ export function Welcome() {
               />
             </div>
             <div className="p-4">
-              <div className="text-sm text-gray-500">Duration 3 Days</div>
-              <h3 className="mt-2 font-semibold text-amber-700">Sample Package 6</h3>
-              <p className="mt-2 text-sm text-gray-600">A short description of package 6. Replace with real content later.</p>
+              <div className="text-sm text-gray-500">Duration - 4D/3N</div>
+              <h3 className="mt-2 font-semibold text-sky-800">Mathura Vrindavan and Agra package - RS 12,999/- (4 pax)</h3>
+              <p className="mt-2 text-sm text-gray-600">Experience the spiritual beauty of Mathura, Vrindavan, and Agra in just three days. Includes guided temple visits, scenic drives, comfortable stays and Monument Visits for a memorable experience.</p>
               <div className="mt-4 flex gap-3">
-                <button className="flex-1 rounded-md border border-amber-500 text-amber-500 px-3 py-2 text-sm">Enquire Now</button>
+                <button className="flex-1 rounded-md border border-blue-500 text-blue-500 px-3 py-2 text-sm">Enquire Now</button>
                 <button
                   type="button"
                   onClick={() => setSelectedPackage(6)}
-                  className="flex-1 rounded-md bg-amber-500 text-white px-3 py-2 text-sm"
+                  className="flex-1 rounded-md bg-blue-500 text-white px-3 py-2 text-sm"
+                >
+                  Know More
+                </button>
+              </div>
+            </div>
+          </article>
+
+          {/* Package 7 */}
+          <article className="border rounded-lg overflow-hidden shadow-sm bg-white">
+            <div className="h-48 bg-gray-100">
+              <img
+                src="/images/img24.jpeg"
+                alt="Package 7"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="p-4">
+              <div className="text-sm text-gray-500">Duration - 1 Day</div>
+              <h3 className="mt-2 font-semibold text-sky-800">🌸 BRAJ HOLI EXPERIENCE – 1 Day Special  - Rs 4,999/- (2 pax)</h3>
+              <p className="mt-2 text-sm text-gray-600">Celebrate Holi in Braj with a safe, guided day tour. Enjoy vibrant festivities, temple visits, and local culture with a private cab, expert assistance, and personalized pickup/drop for a memorable experience.</p>
+              <div className="mt-4 flex gap-3">
+                <button className="flex-1 rounded-md border border-blue-500 text-blue-500 px-3 py-2 text-sm">Enquire Now</button>
+                <button
+                  type="button"
+                  onClick={() => setSelectedPackage(7)}
+                  className="flex-1 rounded-md bg-blue-500 text-white px-3 py-2 text-sm"
                 >
                   Know More
                 </button>
@@ -391,21 +440,112 @@ export function Welcome() {
               if (!info) return null;
               return (
                 <div>
-                  <h3 className="text-xl font-semibold text-amber-700">{info.title}</h3>
+                  <h3 className="text-xl font-semibold text-blue-500">{info.title}</h3>
                   <div className="text-sm text-gray-500 mt-1">Duration: {info.duration}</div>
-                  <p className="mt-4 text-gray-700">{info.itinerary}</p>
+                  <div
+                    className="mt-4 text-gray-700"
+                    style={{
+                      maxHeight: '320px',
+                      overflowY: 'auto',
+                      whiteSpace: 'pre-line',
+                      paddingRight: '8px',
+                    }}
+                  >
+                    {info.itinerary}
+                  </div>
                 </div>
               );
             })()}
           </div>
         </div>
       )}
+
+      
       </section>
 
+        {/* Blog Section - styled like the screenshot */}
+        <section id="blogs" className="container mx-auto px-6 py-16">
+          <h2 className="text-4xl font-extrabold text-center text-sky-800 mb-10">Know More About Braj Dham</h2>
+          <div className="max-w-6xl mx-auto">
+            <p className="text-lg text-gray-700 mb-6">
+              Come discover the magical cities where divinity meets earth - Mathura and Vrindavan, where every street corner whispers ancient stories and every temple bell awakens your soul. Imagine walking through the very lanes where Lord Krishna once played, in Mathura, his sacred birthplace. Feel your heart skip a beat as you join hundreds of devotees in the melodious evening aarti at Vishram Ghat, where countless lamps light up the twilight sky.
+Our carefully crafted journeys aren't just tours - they're pathways to finding peace, joy, and perhaps even yourself. Whether you're drawn to the enchanting chaos of Banke Bihari Temple, where Krishna's beloved idol peeks through flower garlands, or the powerful energy of Krishna Janmabhoomi that takes you back thousands of years, every moment here is pure magic.
+Want to dance in the colors of Holi or celebrate Krishna's birthday during the grand Janmashtami festival? We'll make it happen! Stay for a quick weekend escape or lose yourself in a longer adventure - the choice is yours. Our local guides, who know these sacred towns like the back of their hands, will share stories that no history book can tell you.
+Let's make your spiritual journey comfortable and memorable, with hand-picked stays and smooth travels. This isn't just another holiday - it's a chance to experience miracles, taste divine local delicacies, and carry back memories that will warm your heart for years to come.
+Ready to begin your soul-stirring journey through Mathura and Vrindavan? Come, let's walk these blessed paths together!
+
+            </p>
+            {/* <h3 className="text-2xl font-bold text-blue-500 mb-4">Understanding Vrindavan through a guided Vrindavan Tour Package</h3>
+            <p className="text-lg text-gray-700 mb-6">
+              When people visit Vrindavan on their own, they often feel confused. Temples are many. Lanes look similar. Crowds move in every direction. A Vrindavan Tour Package brings clarity to this movement. It gives structure without taking away the town’s natural flow. Guides share stories, help you find quiet corners, and make sure you do not miss the moments that matter.<br/>
+              The best packages do not just list temples. They help you feel the spirit of Vrindavan. They give you time to sit by the Yamuna, to listen to the temple bells, to watch the evening aarti, and to walk the parikrama path at your own pace.
+            </p> */}
+          </div>
+        </section>
+
+        {/* Services Section */}
+        <section id="services" className="container mx-auto px-6 py-16">
+          <h2 className="text-4xl font-extrabold text-center text-sky-800 mb-4">Our Services</h2>
+          <p className="text-center text-gray-500 max-w-3xl mx-auto mb-10">
+            At Explore Mathura Vrindavan, we offer a complete range of travel services designed to make your pilgrimage and cultural journey seamless, enriching, and truly unforgettable
+            <span role="img" aria-label="phone"> 📞</span> 24x7 Customer Support for a worry-free experience
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Taxi Services */}
+            <div className="bg-white rounded-xl shadow p-6 flex flex-col items-start">
+              <h3 className="text-xl font-bold text-sky-800 mb-2">Taxi Services</h3>
+              <p className="text-gray-600 mb-4">Explore Mathura Vrindavan provides trusted and comfortable taxi services across all major pilgrimage and cultural destinations. As local Braj experts, we ensure your journey is smooth, safe, and enriched with authentic spiritual and cultural experiences.</p>
+
+            </div>
+            {/* Customised Tour Package / VIP Darshan */}
+            <div className="bg-white rounded-xl shadow p-6 flex flex-col items-start">
+              <h3 className="text-xl font-bold text-sky-800 mb-2">Customised Tour Package / VIP Darshan</h3>
+              <p className="text-gray-600 mb-4">At Explore Mathura Vrindavan, we offer a complete range of travel services designed to make your pilgrimage and cultural journey seamless, enriching, and truly unforgettable <span role='img' aria-label='phone'>📞</span> 24x7 Customer Support for a worry-free experience</p>
+
+            </div>
+            {/* Tour Guide */}
+            <div className="bg-white rounded-xl shadow p-6 flex flex-col items-start">
+              <h3 className="text-xl font-bold text-sky-800 mb-2">Tour Guide</h3>
+              <p className="text-gray-600 mb-4">Explore Mathura Vrindavan provides experienced and knowledgeable local tour guides who bring the region’s rich history, culture, and spiritual traditions to life. With deep roots in the Braj area, our guides ensure a meaningful and insightful travel experience.</p>
+
+            </div>
+          </div>
+        </section>
+                {/* Contact Us Section */}
+        <section id="contact" className="container mx-auto px-6 py-16">
+          <h2 className="text-4xl font-extrabold text-center text-sky-800 mb-6">Contact Us</h2>
+          <p className="text-center text-gray-600 mb-8">We'd love to connect with you! Reach out to us on your favorite platform:</p>
+          <div className="flex flex-wrap justify-center gap-8">
+            <a href="#" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center group">
+              <span className="bg-gradient-to-tr from-pink-500 to-yellow-500 rounded-full p-4 mb-2">
+                <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M7.75 2A5.75 5.75 0 0 0 2 7.75v8.5A5.75 5.75 0 0 0 7.75 22h8.5A5.75 5.75 0 0 0 22 16.25v-8.5A5.75 5.75 0 0 0 16.25 2h-8.5zm0 1.5h8.5A4.25 4.25 0 0 1 20.5 7.75v8.5A4.25 4.25 0 0 1 16.25 20.5h-8.5A4.25 4.25 0 0 1 3.5 16.25v-8.5A4.25 4.25 0 0 1 7.75 3.5zm8.25 2.25a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5zM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 1.5a3.5 3.5 0 1 1 0 7 3.5 3.5 0 0 1 0-7z"/></svg>
+              </span>
+              <span className="text-gray-700 group-hover:text-pink-600 font-medium">Instagram</span>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center group">
+              <span className="bg-blue-600 rounded-full p-4 mb-2">
+                <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35C.6 0 0 .6 0 1.326v21.348C0 23.4.6 24 1.326 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.4 24 24 23.4 24 22.674V1.326C24 .6 23.4 0 22.675 0"/></svg>
+              </span>
+              <span className="text-gray-700 group-hover:text-blue-600 font-medium">Facebook</span>
+            </a>
+            <a href="#" className="flex flex-col items-center group">
+              <span className="bg-green-500 rounded-full p-4 mb-2">
+                <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+              </span>
+              <span className="text-gray-700 group-hover:text-green-600 font-medium">Email</span>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center group">
+              <span className="bg-green-400 rounded-full p-4 mb-2">
+                <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.148-.67.15-.198.297-.767.967-.94 1.166-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.58-.487-.501-.669-.511-.173-.008-.372-.01-.571-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.214 3.074.149.198 2.099 3.205 5.077 4.372.71.306 1.263.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.288.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+              </span>
+              <span className="text-gray-700 group-hover:text-green-500 font-medium">WhatsApp</span>
+            </a>
+          </div>
+        </section>
       {/* Bottom wave / footer accent */}
-      <div className="mt-8">
-        <div className="w-full h-24 bg-gradient-to-r from-amber-200 via-pink-100 to-sky-200 rounded-t-lg"></div>
-      </div>
+      {/* <div className="mt-8">
+        <div className="w-full h-24 bg-gradient-to-r from-blue-200 via-pink-100 to-sky-200 rounded-t-lg"></div>
+      </div> */}
     </main>
   );
 }
