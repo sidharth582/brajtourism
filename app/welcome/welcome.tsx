@@ -116,8 +116,7 @@ export function Welcome() {
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-md bg-sky-800 flex items-center justify-center text-white font-bold">MV</div>
               <div>
-                <div className="text-sm font-semibold">Explore Mathura Vrindavan</div>
-                <div className="text-xs text-gray-500">Packages</div>
+                <div className="text-md font-semibold">Explore Mathura Vrindavan</div>
               </div>
             </div>
           </div>
@@ -248,6 +247,33 @@ export function Welcome() {
         </p>
 
         <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+
+          {/* Package 7 */}
+          <article className="border rounded-lg overflow-hidden shadow-sm bg-white">
+            <div className="h-48 bg-gray-100">
+              <img
+                src="/images/img24.jpeg"
+                alt="Package 7"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="p-4">
+              <div className="text-sm text-gray-500">Duration - 1 Day</div>
+              <h3 className="mt-2 font-semibold text-sky-800">🌸 BRAJ HOLI EXPERIENCE – 1 Day Special  - Rs 4,999/- (2 pax)</h3>
+              <p className="mt-2 text-sm text-gray-600">Celebrate Holi in Braj with a safe, guided day tour. Enjoy vibrant festivities, and local culture with a private cab, expert assistance, and personalized pickup/drop for a memorable experience.</p>
+              <div className="mt-4 flex gap-3">
+                <button className="flex-1 rounded-md border border-blue-500 text-blue-500 px-3 py-2 text-sm" type="button" onClick={() => setShowEnquiryModal(true)}>Enquire Now</button>
+                <button
+                  type="button"
+                  onClick={() => setSelectedPackage(7)}
+                  className="flex-1 rounded-md bg-blue-500 text-white px-3 py-2 text-sm"
+                >
+                  Know More
+                </button>
+              </div>
+            </div>
+          </article>
+
           {/* Package 1 - customize separately */}
           <article className="border rounded-lg overflow-hidden shadow-sm bg-white">
             <div className="h-48 bg-gray-100">
@@ -397,32 +423,6 @@ export function Welcome() {
                 <button
                   type="button"
                   onClick={() => setSelectedPackage(6)}
-                  className="flex-1 rounded-md bg-blue-500 text-white px-3 py-2 text-sm"
-                >
-                  Know More
-                </button>
-              </div>
-            </div>
-          </article>
-
-          {/* Package 7 */}
-          <article className="border rounded-lg overflow-hidden shadow-sm bg-white">
-            <div className="h-48 bg-gray-100">
-              <img
-                src="/images/img24.jpeg"
-                alt="Package 7"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="p-4">
-              <div className="text-sm text-gray-500">Duration - 1 Day</div>
-              <h3 className="mt-2 font-semibold text-sky-800">🌸 BRAJ HOLI EXPERIENCE – 1 Day Special  - Rs 4,999/- (2 pax)</h3>
-              <p className="mt-2 text-sm text-gray-600">Celebrate Holi in Braj with a safe, guided day tour. Enjoy vibrant festivities, temple visits, and local culture with a private cab, expert assistance, and personalized pickup/drop for a memorable experience.</p>
-              <div className="mt-4 flex gap-3">
-                <button className="flex-1 rounded-md border border-blue-500 text-blue-500 px-3 py-2 text-sm" type="button" onClick={() => setShowEnquiryModal(true)}>Enquire Now</button>
-                <button
-                  type="button"
-                  onClick={() => setSelectedPackage(7)}
                   className="flex-1 rounded-md bg-blue-500 text-white px-3 py-2 text-sm"
                 >
                   Know More
@@ -621,7 +621,7 @@ export function Welcome() {
             </span>
           </a>
           <a
-            href="tel:+919876543210" // 🔁 Replace with your number
+            href="tel:+918445731077" // 🔁 Replace with your number
             className="fixed bottom-5 right-5 z-50"
           >
             <div className="flex items-center gap-2 bg-white border border-gray-300 shadow-md px-4 py-2 rounded-md hover:shadow-lg transition transform hover:-translate-y-0.5">
